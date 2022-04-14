@@ -1,0 +1,26 @@
+.search-box {
+    @include basic-box;
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .heading {
+        width: 100%;
+    }
+
+    .search-form {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        gap: 10px;
+    }
+
+
+    .search-input {
+        min-width: 200px;
+    }
+
+}

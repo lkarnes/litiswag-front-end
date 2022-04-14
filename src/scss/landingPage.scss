@@ -1,0 +1,15 @@
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+
+    .product-list {
+        width: 100%;
+        padding: 20px 10px;
+        display:flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
+        align-items: stretch;
+    }
+}

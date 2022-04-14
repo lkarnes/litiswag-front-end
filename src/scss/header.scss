@@ -1,0 +1,31 @@
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    border-bottom: 1px solid $secondary-light;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    box-shadow: 5px 0 5px black;
+    background: $primary-blue-xlight;
+
+    .logo {
+        color: $secondary-color;
+    }
+
+    .navigation {
+        .nav-icon {
+            height: 40px;
+            border-radius: 50%;
+            padding: 5px;
+            
+            &:hover {
+                padding: 0;
+                height: px;
+                background-color: #0000002a;
+                transition: ease-in-out .2s;
+            }
+        }
+    }
+}

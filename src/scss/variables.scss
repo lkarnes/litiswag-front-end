@@ -1,0 +1,17 @@
+// colors
+$background: #edeef2;
+$background-secondary: #f6f6f6;
+$background-third: #fcfcfc;
+$secondary-light: rgb(45, 186, 220, .25);
+$primary-blue: #013146;
+$primary-blue-xlight: rgba(1, 49, 70, 0.15);
+$primary-color: #013146;
+$secondary-color: #2dbadc;
+
+
+// mixins
+@mixin basic-box {
+    background: $background-third;
+    box-shadow: 0px 1px 5px $primary-blue-xlight;
+    border-radius: 3px;
+}

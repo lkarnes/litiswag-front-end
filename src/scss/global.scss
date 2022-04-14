@@ -1,0 +1,67 @@
+html {
+    font-family: 'Roboto', Courier, monospace;
+    color: $primary-color;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+h5 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#hamburger-icon {
+    fill: $primary-blue;
+}
+
+.content-box {
+    background: $background-secondary;
+    border: 1px solid $background;
+    border-bottom: none;
+    border-top: none;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 85px !important;
+    min-height: calc(100vh - 50px);
+}
+
+// buttons
+.primary-button {
+    height: 30px;
+    min-width: 80px;
+    padding: 5px;
+    background: $secondary-color;
+    border: none;
+    border-radius: 3px;
+    color: white;
+
+    &:hover {
+        border: 1px solid $primary-blue;
+    }
+
+    &:active {
+        background: $primary-blue-xlight;
+    }
+}

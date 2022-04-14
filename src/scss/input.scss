@@ -1,0 +1,14 @@
+.input-box, .select-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-label, .select-label {
+    font-size: .8rem;
+}
+
+.input-field, .select-field {
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
