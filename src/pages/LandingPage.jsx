@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import CreateForm from "../components/CreateForm";
+import ProductForm from "../components/ProductForm";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ItemCard from "../components/ItemCard";
@@ -11,7 +11,7 @@ import { getProducts } from "../service/productService";
  */
 const LandingPage = (props) => {
     const [productList, setProductList] = useState();
-    const [create, setCreate] = useState(false);
+    const [createProduct, setCreateProduct] = useState(false);
 
     // retrieves a product list when needed
     useEffect(() => {
@@ -28,12 +28,14 @@ const LandingPage = (props) => {
         <>
             <Header { ...props }/>
             <div className="content-box landing-page">
-                { !create && <button className="primary-button create-button" onClick={ () => setCreate(!create) } >Create</button> }
-                { create && 
-                    <CreateForm
+                
+                {/* TODO: Hide ProductForm behind validation */}
+                { !createProduct && <button className="primary-button create-button" onClick={ () => setCreateProduct(!createProduct) } >Create</button> }
+                { createProduct && 
+                    <ProductForm
                         productList={ productList }
                         setProductList={ setProductList }
-                        closeForm={ () => setCreate(false) }
+                        closeForm={ () => setCreateProduct(false) }
                     />
                 }
                 <SearchForm setProductList={ setProductList } />

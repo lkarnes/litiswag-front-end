@@ -1,6 +1,6 @@
 
 /**
- * Header- footer for the website (should live on every route)
+ * Footer- footer for the website (should live on every route)
  */
 const Footer = (props) => {
     return (

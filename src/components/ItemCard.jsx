@@ -1,7 +1,12 @@
 
+/**
+ * ItemCard- displays the product data in a card view
+ * props:
+ *  product- object containing all the product information
+ */
 const ItemCard = ({product}) => {
     return (
-        <div className="item-card" key={ product.id + "-product" }>
+        <div className="item-card" key={ product.id }>
             <div className="image-box">
                 <img className="item-image" src={product.image ? product.image : "../../../icons/no-image-icon.png"} alt="product"/>
             </div>

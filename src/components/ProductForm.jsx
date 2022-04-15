@@ -4,7 +4,13 @@ import { createProduct } from "../service/productService";
 import Input from "./Input";
 import Select from "./Select";
 
-const CreateForm = ({ productList, setProductList, closeForm }) => {
+/**
+ * ProductForm- form component that allows users to upload a new product
+ * props:
+ * setProductList- updates the productList after a product is created
+ * closeForm- closes the form when called
+ */
+const ProductForm = ({ setProductList, closeForm }) => {
     const [productForm, setProductForm] = useState({ stock: { sm: null, md: null, l: null, xl: null } });
     const [image, setImage] = useState();
     const photoInput = useRef();
@@ -139,4 +145,4 @@ const CreateForm = ({ productList, setProductList, closeForm }) => {
     )
 }
 
-export default CreateForm;
+export default ProductForm;
