@@ -38,20 +38,23 @@ const LandingPage = (props) => {
                         closeForm={ () => setCreateProduct(false) }
                     />
                 }
+
                 <SearchForm setProductList={ setProductList } />
+
                 <div className="product-list">
                     { productList 
                         ? productList.length > 0 
                             ? productList.map((product, index) => (
-                                    <ItemCard 
-                                        key={ product.productId + "-" + index  }
-                                        product={product}
-                                    />
+                                <ItemCard 
+                                    key={ index }
+                                    product={ product }
+                                />
                             ))
                             : <div>no products found</div>
                         : <div>Loading...</div>
                     }
                 </div>
+                
             </div>
             <Footer {...props}/>
         </>
