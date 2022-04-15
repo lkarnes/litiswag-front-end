@@ -28,7 +28,7 @@ const LandingPage = (props) => {
         <>
             <Header { ...props }/>
             <div className="content-box landing-page">
-                { !create && <button className="primary-button create-button" onClick={ () => setCreate(!create) } >Create Product</button> }
+                { !create && <button className="primary-button create-button" onClick={ () => setCreate(!create) } >Create</button> }
                 { create && 
                     <CreateForm
                         productList={ productList }
@@ -41,11 +41,10 @@ const LandingPage = (props) => {
                     { productList 
                         ? productList.length > 0 
                             ? productList.map((product, index) => (
-                                <div className="item-card-box" key={ product.productId + "-" + index  }>
-                                    <ItemCard
+                                    <ItemCard 
+                                        key={ product.productId + "-" + index  }
                                         product={product}
                                     />
-                                </div>
                             ))
                             : <div>no products found</div>
                         : <div>Loading...</div>

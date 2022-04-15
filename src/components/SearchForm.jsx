@@ -61,8 +61,8 @@ const SearchForm = ({  setProductList }) => {
                     array={ genderType }
                 />
                 <div className="search-buttons">
+                    <button type="reset" className="secondary-button" onClick={ handleClear }>Clear</button>
                     <button type="submit" className="primary-button" onClick={ handleSearch }>Search</button>
-                    <button type="reset" className="secondary-button" onClick={ handleClear }>clear</button>
                 </div>
                 
             </form>

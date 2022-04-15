@@ -291,32 +291,32 @@ export const productsList = [
         type: "shirt",
         gender: "female"
     },
-    {
-        productId: 23,
-        productName: "lorem ipsum",
-        productDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        stock: {
-            sm: 10,
-            md: 20,
-            l: 5,
-            xl: 0
-        },
-        type: "shirt",
-        gender: "female"
-    },
-    {
-        productId: 24,
-        productName: "lorem ipsum",
-        productDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        stock: {
-            sm: 10,
-            md: 20,
-            l: 5,
-            xl: 0
-        },
-        type: "shirt",
-        gender: "female"
-    }
+    // {
+    //     productId: 23,
+    //     productName: "lorem ipsum",
+    //     productDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    //     stock: {
+    //         sm: 10,
+    //         md: 20,
+    //         l: 5,
+    //         xl: 0
+    //     },
+    //     type: "shirt",
+    //     gender: "female"
+    // },
+    // {
+    //     productId: 24,
+    //     productName: "lorem ipsum",
+    //     productDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    //     stock: {
+    //         sm: 10,
+    //         md: 20,
+    //         l: 5,
+    //         xl: 0
+    //     },
+    //     type: "shirt",
+    //     gender: "female"
+    // }
 ]
 
  // fake list of possible merchandise types

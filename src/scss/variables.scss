@@ -1,7 +1,7 @@
 // colors
 $background: #edeef2;
 $background-secondary: #f6f6f6;
-$background-third: #fcfcfc;
+$xlight-gray: #ebebeb;
 $secondary-light: rgb(45, 186, 220, .25);
 $white-light: rgba(255, 255, 255, 0.75);
 $primary-blue: #013146;
@@ -11,12 +11,12 @@ $secondary-color: #2dbadc;
 
 // media queries
 $tablet: 1000px;
-$mobile: 700px;
-
+$mobile: 750px;
 
 // mixins
 @mixin basic-box {
-    background: $background-third;
+    background: $background-secondary;
     box-shadow: 0px 1px 3px $primary-blue-xlight;
     border-radius: 5px;
+    border: 1px solid $xlight-gray;
 }

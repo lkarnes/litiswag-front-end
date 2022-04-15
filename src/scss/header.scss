@@ -3,7 +3,7 @@
     width: 100%;
     padding: 10px;
     display: flex;
-    border-bottom: 1px solid $secondary-light;
+    border-bottom: 1px solid $primary-blue-xlight;
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
@@ -20,6 +20,7 @@
             border-radius: 50%;
             padding: 5px;
             transition: ease-in-out .2s;
+            cursor: pointer;
             
             &:hover {
                 padding: 0;

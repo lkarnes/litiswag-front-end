@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { filterType, genderType } from "../fakeData";
 import { createProduct } from "../service/productService";
 import Input from "./Input";
@@ -6,6 +6,8 @@ import Select from "./Select";
 
 const CreateForm = ({ productList, setProductList, closeForm }) => {
     const [productForm, setProductForm] = useState({ stock: { sm: null, md: null, l: null, xl: null } });
+    const [image, setImage] = useState();
+    const photoInput = useRef();
 
     // update inputs value
     const handleChange = (e) => {
@@ -24,7 +26,7 @@ const CreateForm = ({ productList, setProductList, closeForm }) => {
         createProduct(productForm);
 
         // TODO: place in .then and replace fake productId with the one handed by the response
-        setProductList((products) => ([{ ...productForm, productId: products.length + 1 }, ...products]));
+        setProductList((products) => ([{ ...productForm, productId: products.length + 1, image: image}, ...products]));
 
     }
 
@@ -33,10 +35,36 @@ const CreateForm = ({ productList, setProductList, closeForm }) => {
         closeForm();
     }
 
+    // removes the image from state and clears its value
+    const removePhoto = () => {
+        photoInput.current.value = null;
+        setImage();
+    }
+
     return (
         <div className="create-product">
             <h4 className="heading">Create Product</h4>
             <form className="product-form">
+                <div className="image-upload">
+                    <div className="image-box">
+                        { !image 
+                            ? <button type="button" className="primary-button" onClick={ () => photoInput.current.click() }>Choose Photo</button>
+                            : <img src={ image } alt="created product"/>
+                        }
+                    </div>
+                    { image && <button type="button" className="secondary-button remove-button" onClick={ removePhoto }>Remove</button>}
+
+                    {/* hiddden input for selecting a image */}
+                    <input
+                        ref={ photoInput }
+                        style={{display: "none"}}
+                        type="file"
+                        name="image"
+                        onChange={ (e) => setImage(URL.createObjectURL(e.target.files[0])) }
+                        accept=".png,.jpg"
+                    />
+                </div>
+            
                 <Input
                     value={ productForm.productName }
                     name="productName"
@@ -81,7 +109,7 @@ const CreateForm = ({ productList, setProductList, closeForm }) => {
                         type="number"
                         value={ productForm.stock.md }
                         name="md"
-                        label="Small"
+                        label="Medium"
                         handleChange={ handleStockChange }
                         inputClass="stock-input"
                     />
@@ -89,7 +117,7 @@ const CreateForm = ({ productList, setProductList, closeForm }) => {
                         type="number"
                         value={ productForm.stock.l }
                         name="l"
-                        label="Small"
+                        label="Large"
                         handleChange={ handleStockChange }
                         inputClass="stock-input"
                     />
@@ -97,15 +125,15 @@ const CreateForm = ({ productList, setProductList, closeForm }) => {
                         type="number"
                         value={ productForm.stock.xl }
                         name="xl"
-                        label="Small"
+                        label="Xtra Large"
                         handleChange={ handleStockChange }
                         inputClass="stock-input"
                     />
                 </div>
             </form>
             <div className="product-buttons">
+                <button type="reset" className="secondary-button" onClick={ handleCancel }>Cancel</button>
                 <button type="submit" className="primary-button" onClick={ handleSubmit }>Create</button>
-                <button type="reset" className="secondary-button" onClick={ handleCancel }>cancel</button>
             </div>
         </div>
     )
