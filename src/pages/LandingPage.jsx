@@ -1,35 +1,54 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import CreateForm from "../components/CreateForm";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ItemCard from "../components/ItemCard";
 import SearchForm from "../components/SearchForm";
-import { productsList } from "../fakeData";
+import { getProducts } from "../service/productService";
 
 /**
  * Landing Page- Root directory of the site where the product list displays
  */
 const LandingPage = (props) => {
-    const [productList, setProductList] = useState(productsList);
+    const [productList, setProductList] = useState();
+    const [create, setCreate] = useState(false);
 
-    console.log(productList);
+    // retrieves a product list when needed
+    useEffect(() => {
+
+        if (!productList) {
+            // TODO: convert to api call
+            setProductList(getProducts());
+        }
+        
+    }, [productList])
+    
     
     return (
         <>
             <Header { ...props }/>
             <div className="content-box landing-page">
-                <SearchForm productList={ productList } setProductList={ setProductList } />
+                { !create && <button className="primary-button create-button" onClick={ () => setCreate(!create) } >Create Product</button> }
+                { create && 
+                    <CreateForm
+                        productList={ productList }
+                        setProductList={ setProductList }
+                        closeForm={ () => setCreate(false) }
+                    />
+                }
+                <SearchForm setProductList={ setProductList } />
                 <div className="product-list">
                     { productList 
                         ? productList.length > 0 
-                            ? productList.map((product) => (
-                                <ItemCard
-                                    key={ product.productId }
-                                    product={product}
-                                />
+                            ? productList.map((product, index) => (
+                                <div className="item-card-box" key={ product.productId + "-" + index  }>
+                                    <ItemCard
+                                        product={product}
+                                    />
+                                </div>
                             ))
                             : <div>no products found</div>
                         : <div>Loading...</div>
-
                     }
                 </div>
             </div>

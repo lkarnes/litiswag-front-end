@@ -10,7 +10,8 @@ export const productsList = [
             xl: 0
         },
         type: "shirt",
-        gender: "female"
+        gender: "female",
+        image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
     },
     {
         productId: 2,
@@ -23,11 +24,12 @@ export const productsList = [
             xl: 0
         },
         type: "shirt",
-        gender: "female"
+        gender: "female",
+        image: "https://images.unsplash.com/photo-1602442787305-decbd65be507?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDl8fGJsYWNrJTIwc2hpcnQlMjB3b21lbnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
     },
     {
         productId: 3,
-        productName: "Mens Blue Tee",
+        productName: "Mens Black Tee",
         productDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         stock: {
             sm: 10,
@@ -36,7 +38,8 @@ export const productsList = [
             xl: 0
         },
         type: "shirt",
-        gender: "male"
+        gender: "male",
+        image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2hpcnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
     },
     {
         productId: 4,
@@ -49,7 +52,8 @@ export const productsList = [
             xl: 0
         },
         type: "shirt",
-        gender: "male"
+        gender: "male",
+        image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2hpcnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
     },
     {
         productId: 5,
@@ -62,7 +66,8 @@ export const productsList = [
             xl: 0
         },
         type: "shirt",
-        gender: "female"
+        gender: "male",
+        image: "https://images.unsplash.com/photo-1608976989382-d913f97920c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmVkJTIwc2hpcnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
     },
     {
         productId: 6,
@@ -75,7 +80,8 @@ export const productsList = [
             xl: 0
         },
         type: "shirt",
-        gender: "female"
+        gender: "female",
+        image: "https://images.unsplash.com/photo-1566839601667-9b95b0ce777c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHJlZCUyMHNoaXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
     },
     {
         productId: 7,
@@ -192,7 +198,7 @@ export const productsList = [
             xl: 0
         },
         type: "hat",
-        gender: "female"
+        gender: "male"
     },
     {
         productId: 16,
@@ -297,8 +303,7 @@ export const productsList = [
         },
         type: "shirt",
         gender: "female"
-    }
-    ,
+    },
     {
         productId: 24,
         productName: "lorem ipsum",

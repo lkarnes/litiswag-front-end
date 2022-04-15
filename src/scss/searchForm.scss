@@ -8,6 +8,7 @@
 
     .heading {
         width: 100%;
+        margin-bottom: 15px;
     }
 
     .search-form {
@@ -16,11 +17,24 @@
         flex-wrap: wrap;
         align-items: flex-end;
         gap: 10px;
+
+        .search-buttons {
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+            margin-top: 10px;
+        }
+        
+        .search-input {
+            min-width: 200px;
+
+            @media (max-width: $tablet) {
+                width: 50%;
+            }
+
+            @media (max-width: $mobile) {
+                width: 100%;
+            }
+        }
     }
-
-
-    .search-input {
-        min-width: 200px;
-    }
-
 }

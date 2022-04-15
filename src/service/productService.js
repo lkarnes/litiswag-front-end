@@ -1,26 +1,36 @@
 import { productsList } from "../fakeData"
 
+// Get call to retrieve a full product list
 export const getProducts = () => {
     return productsList;
 }
 
-// search for product
-export const searchProducts = (searchForm) => {
-    console.log(searchForm)
-    let response = productsList;
-    if (searchForm.search && searchForm.search.trim()) {
-        response = productsList.filter(product => {
-            console.log(product.productName, searchForm.search, product.type, searchForm.filterType, product.gender, searchForm.filterGender )
-            if (product.productName.includes(searchForm.search) 
-                && (!searchForm.filterType === "all" || product.type === searchForm.filterType) 
-                && (!searchForm.filterGender === "all" || product.gender === searchForm.filterGender)
-            ) {
-                return true;
-            }
-            return false;
-        })
-    }
+// Post call to create a product
+export const createProduct = (body) => {
+    
+    // TODO: make post call to create a product
+}
 
-    console.log(response);
-    return response;
+// search product helpers
+
+// checks the search query in the form
+const checkSearch = (search, product) => {
+    return ((!search || search.trim() === "") || product.productName.includes(search));
+}
+
+// compares the product type in the form vs in the product
+const checkType = (type, product) => {
+    return (type === "all" || type === product);
+}
+
+// compares the gender in the form vs in the product
+const checkGender = (gender, product) => {
+    return (gender === "all" || product === gender);
+}
+
+// Get call to search for a product
+export const searchProducts = (searchForm) => {
+    return productsList.filter((product) => {
+        return (checkSearch(searchForm.search, product) && checkType(searchForm.filterType, product.type) && checkGender(searchForm.filterGender, product.gender));
+    });
 }

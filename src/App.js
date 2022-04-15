@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route exact path="/" element={<LandingPage />}/>
-    </Routes>
+      </Routes>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 
 const ItemCard = ({product}) => {
     return (
-        <div className="item-card">
+        <div className="item-card" key={ product.id + "-product" }>
             <div className="image-box">
                 <img className="item-image" src={product.image ? product.image : "../../../icons/no-image-icon.png"} alt="product"/>
             </div>
@@ -17,9 +17,11 @@ const ItemCard = ({product}) => {
                     { product.stock
                         &&  Object.entries(product.stock).map(([size, count]) => (
                             <>
-                                { count !== 0 
-                                    ? <li title={ count }>{ size }</li>
-                                    : <li className="out-of-stock" title="out of stock">{ size }</li>
+
+                                {/* eslint-disable-next-line eqeqeq */}
+                                { count != 0 
+                                    ? <li title={ count } key={ size }>{ size.toUpperCase() }</li>
+                                    : <li className="out-of-stock" title="out of stock" key={ size }>{ size.toUpperCase() }</li>
                                 }
                             </>
                         ))

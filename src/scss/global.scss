@@ -54,8 +54,28 @@ h5 {
     padding: 5px;
     background: $secondary-color;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     color: white;
+    border: 1px solid transparent;
+
+    &:hover {
+        border: 1px solid $primary-blue;
+    }
+
+    &:active {
+        background: $primary-blue-xlight;
+    }
+}
+
+// buttons
+.secondary-button {
+    height: 30px;
+    min-width: 80px;
+    padding: 5px;
+    background: lightgray;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid transparent;
 
     &:hover {
         border: 1px solid $primary-blue;

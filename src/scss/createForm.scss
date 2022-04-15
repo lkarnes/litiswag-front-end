@@ -1,0 +1,55 @@
+.create-product {
+    @include basic-box;
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    .heading {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .product-form {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 10px;
+        
+        .product-input {
+            min-width: 200px;
+            width: calc(25% - 10px);
+
+            @media (max-width: $tablet) {
+                width: calc(50% - 5px);
+            }
+
+            @media (max-width: $mobile) {
+                width: 100%;
+            }
+        }
+
+        .stock-section {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+
+            .stock-input {
+                width: calc(25% - 8px);
+            }
+        }
+    }
+
+    .product-buttons {
+        display: flex;
+        gap: 10px;
+        margin-left: auto;
+        margin-top: 10px;
+    }
+}

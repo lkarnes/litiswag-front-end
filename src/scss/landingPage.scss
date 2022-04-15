@@ -9,7 +9,13 @@
         display:flex;
         flex-wrap: wrap;
         gap: 20px;
-        justify-content: space-around;
+        justify-content: flex-start;
         align-items: stretch;
+    }
+
+    .create-button {
+        width: fit-content;
+        margin-left: auto;
+        margin-bottom: 10px;
     }
 }

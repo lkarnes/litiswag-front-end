@@ -6,8 +6,8 @@ const Select = ({ label, value, name, selectClass, handleChange, error, array })
                     { label }
                 </label>
                 <select value={ value } name={ name } onChange={ handleChange } className={`select-field ${ error ? "error" : "" }`}>
-                    {array && array.map((item) => (
-                        <option value={ item.value }>{ item.name }</option>
+                    {array && array.map((item, index) => (
+                        <option value={ item.value } key={ index }>{ item.name }</option>
                     ))}
                 </select>
         </div>

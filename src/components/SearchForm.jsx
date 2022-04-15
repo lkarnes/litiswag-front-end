@@ -10,8 +10,11 @@ import { searchProducts } from "../service/productService";
  * productList- gets the productList
  * setProductList- sets the productList
  */
-const SearchForm = ({ productList, setProductList }) => {
-    const [searchForm, setSearchForm] = useState({});
+const SearchForm = ({  setProductList }) => {
+    const [searchForm, setSearchForm] = useState({
+        filterType: "all",
+        filterGender: "all"
+    });
 
     // make a call to filter the product results
     const handleSearch = (e) => {
@@ -22,6 +25,11 @@ const SearchForm = ({ productList, setProductList }) => {
     // update inputs value
     const handleChange = (e) => {
         setSearchForm((form) => ({...form, [e.target.name]: e.target.value}))
+    }
+
+    // reset the search form
+    const handleClear = () => {
+        setProductList();
     }
 
     return (
@@ -52,7 +60,11 @@ const SearchForm = ({ productList, setProductList }) => {
                     selectClass="search-input"
                     array={ genderType }
                 />
-                <button type="submit" className="primary-button" onClick={ handleSearch }>Search</button>
+                <div className="search-buttons">
+                    <button type="submit" className="primary-button" onClick={ handleSearch }>Search</button>
+                    <button type="reset" className="secondary-button" onClick={ handleClear }>clear</button>
+                </div>
+                
             </form>
         </div>
     )

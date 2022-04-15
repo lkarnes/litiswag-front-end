@@ -7,8 +7,8 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
-    box-shadow: 5px 0 5px black;
-    background: $primary-blue-xlight;
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.5);
+    background: $white-light;
 
     .logo {
         color: $secondary-color;
@@ -19,13 +19,40 @@
             height: 40px;
             border-radius: 50%;
             padding: 5px;
+            transition: ease-in-out .2s;
             
             &:hover {
                 padding: 0;
-                height: px;
                 background-color: #0000002a;
                 transition: ease-in-out .2s;
             }
+        }
+
+        .nav-dropdown {
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background: $background;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+
+            .nav-item {
+                padding: 10px;
+                border-radius: 5px;
+                text-decoration: none;
+                color: $primary-blue;
+                font-weight: 500;
+
+                &:hover {
+                    background: $secondary-color;
+                    color: white;
+                }
+            }
+        }
+
+        .hide {
+            display: none;
         }
     }
 }
